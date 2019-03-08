@@ -1,0 +1,24 @@
+MicroServices
+
+
+when the site keeps falling over under load (e.g., during critical high-traffic times such as Black Friday weekend).
+The management team has responded so far by putting the site onto a bigger and bigger server Instead of
+Refactor your application into a set of microservices.
+The network diagram shows how to refactor microservices like rest client, rest api..etc
+
+There are three strategies you can use: implement new functionality as microservices; split the 
+presentation components from the business and data access components; and convert existing modules in the monolith into services.
+Over time the number of microservices will grow, and the agility and velocity of your development team will increase. 
+
+
+Please refer network diagram it shows:
+User B is the candidate module to extract. Its components are used by User A and it uses User C. 
+The first refactoring step is to define a pair of coarse-grained APIs. 
+The first interface is an inbound interface that is used by Module A to invoke Module B. 
+The second is an outbound interface used by Module B to invoke Module C.
+
+The second refactoring step turns the module into a standalone service. 
+The inbound and outbound interfaces are implemented by code that uses an IPC mechanism.
+You will most likely need to build the service by combining Module B with a Microservice Chassis framework that 
+handles cross‑cutting concerns such as service discovery.
+
